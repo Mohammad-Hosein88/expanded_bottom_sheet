@@ -2,6 +2,12 @@
 
 A scrollable bottom sheet with ability to be expanded and scroll more
 
+## Example
+
+| Short content           | 
+|:-----------------------:
+|![](example.gif)
+
 ## Install
 
 ```yaml

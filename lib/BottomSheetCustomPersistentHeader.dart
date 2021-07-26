@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:scrollable_bottom_sheet/BottomSheetState.dart';
 
 class BottomSheetCustomPersistentHeader extends SliverPersistentHeaderDelegate {
   BottomSheetCustomPersistentHeader(
@@ -20,7 +19,7 @@ class BottomSheetCustomPersistentHeader extends SliverPersistentHeaderDelegate {
             border: Border(bottom: BorderSide(width: 2, color: Colors.white))),
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.transparent,
+            color: Theme.of(context).primaryColor,
             borderRadius:
                 BorderRadius.vertical(top: Radius.circular(borderRadius)),
           ),
