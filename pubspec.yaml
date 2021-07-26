@@ -1,7 +1,7 @@
 name: expanded_bottom_sheet
 description: A scrollable bottom sheet with ability to be expanded and scroll more
 version: 0.0.1
-repository: "https://github.com/Mohammad-Hosein88/scrollable_bottom_sheet"
+repository: "https://github.com/Mohammad-Hosein88/expanded_bottom_sheet"
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
