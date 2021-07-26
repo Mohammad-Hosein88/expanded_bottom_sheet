@@ -28,14 +28,19 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-
-
   @override
   void initState() {
     super.initState();
     ScrollableBottomSheet().headerWidget = Container(child: Text("Header"));
-    ScrollableBottomSheet().centerWidget = SliverList(delegate: SliverChildBuilderDelegate((context, index) => Container(color: Colors.red,alignment: Alignment.centerLeft, padding: EdgeInsets.symmetric(vertical: 10),child: Text("$index"),),childCount: 100));
+    ScrollableBottomSheet().centerWidget = SliverList(
+        delegate: SliverChildBuilderDelegate(
+            (context, index) => Container(
+                  color: Colors.red,
+                  alignment: Alignment.centerLeft,
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  child: Text("$index"),
+                ),
+            childCount: 100));
   }
 
   @override
@@ -48,11 +53,10 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-
-class CustomWidget extends StatelessWidget{
-
+class CustomWidget extends StatelessWidget {
   void showBottomSheet(BuildContext context) {
-    ScrollableBottomSheet().openBottomSheet(context,backgroundColor: Colors.black, backgroundOpacity: 0.1);
+    ScrollableBottomSheet().openBottomSheet(context,
+        backgroundColor: Colors.black, backgroundOpacity: 0.1);
   }
 
   @override
@@ -60,7 +64,7 @@ class CustomWidget extends StatelessWidget{
     return Center(
       child: GestureDetector(
         child: Text("Show Bottom Sheet"),
-        onTap: (){
+        onTap: () {
           showBottomSheet(context);
         },
       ),
