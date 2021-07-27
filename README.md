@@ -4,9 +4,7 @@ A scrollable bottom sheet with ability to be expanded and scroll more
 
 ## Example
 
-| Short content           | 
-|:-----------------------:
-|![](example.gif)
+![](example.gif)
 
 ## Install
 
@@ -34,3 +32,7 @@ BottomSheetWidget().openBottomSheet(context, backgroundColor: Colors.black, back
 // TO CLOSE THE BOTTOM SHEET
 BottomSheetWidget().closeBottomSheet();
 ```
+
+# Note
+
+* The centerWidget MUST be a SliverList otherwise it will give an error
