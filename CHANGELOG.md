@@ -2,6 +2,6 @@
 
 * Just to be published
 
-## [0.0.2] - Version 0.0.2
+## [0.0.3] - Version 0.0.3
 
 * Added example and completed readme
