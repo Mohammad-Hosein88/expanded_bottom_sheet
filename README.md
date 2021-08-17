@@ -10,7 +10,7 @@ A scrollable bottom sheet with ability to be expanded and scroll more
 
 ```yaml
 dependencies:
-  scrollable_bottom_sheet: ^0.0.1
+  scrollable_bottom_sheet: ^0.0.4
 ```
 
 or
@@ -19,15 +19,24 @@ or
 flutter pub add scrollable_bottom_sheet
 ```
 
+##Arguments
+
+| Arguments | Description |
+| ------------- |:------------ |
+| bodyWidget | Body of the widget which MUST be a SliverList |
+| headerWidget | Header of the bottom sheet |
+| headerHeight | To specify the height of the header widget |
+| backgroundColor | Bottom sheet background color when the bottom sheet is up |
+| backgroundOpacity | opacity of the bottom sheet background when the bottom sheet is up |
+| headerIsPinned | Makes the header widget pinned to the top when the body widget is scrolled |
+| hasRadius | Gives header a radius and when reaches top it becomes zero |
+
 ## How to use
 
 ```dart
-// FIRST INITIALIZE WIDGETS
-BottomSheetWidget().centerWidget = MyBottomSheetWidget();
-BottomSheetWidget().headerWidget = MyBottomSheetHeader();
 
 // TO OPEN THE BOTTOM SHEET
-BottomSheetWidget().openBottomSheet(context, backgroundColor: Colors.black, backgroundOpacity: 0.4);
+BottomSheetWidget().openBottomSheet(context);
 
 // TO CLOSE THE BOTTOM SHEET
 BottomSheetWidget().closeBottomSheet();
@@ -35,4 +44,8 @@ BottomSheetWidget().closeBottomSheet();
 
 # Note
 
-* The centerWidget MUST be a SliverList otherwise it will give an error
+** The centerWidget MUST be a SliverList otherwise it will give an error **
+
+When the bottom sheet is up, the back button closes the bottom sheet
+
+New customizing features are going to be added

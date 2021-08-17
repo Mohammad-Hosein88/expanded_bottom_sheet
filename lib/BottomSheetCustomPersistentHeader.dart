@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 class BottomSheetCustomPersistentHeader extends SliverPersistentHeaderDelegate {
-  BottomSheetCustomPersistentHeader(
-      {required this.borderRadius, required this.headerWidget});
+    BottomSheetCustomPersistentHeader(
+      {required this.borderRadius, required this.headerWidget, required this.headerHeight});
 
-  final double borderRadius;
   final Widget headerWidget;
+  final double borderRadius;
+  final double headerHeight;
   int _index = 0;
 
   @override
@@ -35,8 +36,8 @@ class BottomSheetCustomPersistentHeader extends SliverPersistentHeaderDelegate {
   bool shouldRebuild(SliverPersistentHeaderDelegate _) => true;
 
   @override
-  double get maxExtent => 80.002;
+  double get maxExtent => (headerHeight + 0.002);
 
   @override
-  double get minExtent => 80.0;
+  double get minExtent => headerHeight;
 }

@@ -1,6 +1,6 @@
 name: expanded_bottom_sheet
 description: A scrollable bottom sheet with ability to be expanded and scroll more
-version: 0.0.3
+version: 0.0.4
 repository: "https://github.com/Mohammad-Hosein88/expanded_bottom_sheet"
 
 environment:
@@ -8,6 +8,7 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  back_button_interceptor: ^5.0.1
   flutter:
     sdk: flutter
 

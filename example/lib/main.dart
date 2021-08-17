@@ -31,16 +31,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    ScrollableBottomSheet().headerWidget = Container(child: Text("Header"));
-    ScrollableBottomSheet().centerWidget = SliverList(
-        delegate: SliverChildBuilderDelegate(
-            (context, index) => Container(
-                  color: Colors.red,
-                  alignment: Alignment.centerLeft,
-                  padding: EdgeInsets.symmetric(vertical: 10),
-                  child: Text("$index"),
-                ),
-            childCount: 100));
   }
 
   @override
@@ -53,21 +43,49 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class CustomWidget extends StatelessWidget {
+class CustomWidget extends StatefulWidget {
+  @override
+  _CustomWidgetState createState() => _CustomWidgetState();
+}
+
+class _CustomWidgetState extends State<CustomWidget> {
+
+
   void showBottomSheet(BuildContext context) {
     ScrollableBottomSheet().openBottomSheet(context,
-        backgroundColor: Colors.black, backgroundOpacity: 0.1);
+        headerWidget: Container(child: Text("Header")),
+        bodyWidget: SliverList(
+          delegate: SliverChildBuilderDelegate(
+          (context, index) => Container(
+            color: Colors.red,
+              alignment: Alignment.centerLeft,
+              padding: EdgeInsets.symmetric(vertical: 10),
+              child: Text("$index"),
+              ),
+            childCount: 100
+          )
+        ),
+        backgroundColor: Colors.transparent,
+        backgroundOpacity: 0.2,
+        headerHeight: 70.0,
+        hasRadius: true
+    );
   }
+
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: GestureDetector(
-        child: Text("Show Bottom Sheet"),
-        onTap: () {
-          showBottomSheet(context);
-        },
+    return Scaffold(
+      body: Center(
+        child: Builder(builder: (context) => GestureDetector(
+          child: Text("Show Bottom Sheet"),
+          onTap: () {
+            showBottomSheet(context);
+          },
+        )),
       ),
     );
   }
 }
+
+
